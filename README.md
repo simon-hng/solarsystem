@@ -5,7 +5,8 @@ Model for solarsystem produced during computerscience class 2018 Klosterschule.
 ## Getting Started
 ```sh
 $ mkdir solar
-git clone https://github.com/simonh9134/solarsytem.git
+cd solar
+git clone https://github.com/simonh9134/solarsystem.git
 ```
 
 ## Built With
