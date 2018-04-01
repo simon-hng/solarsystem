@@ -4,9 +4,7 @@ Model for solarsystem produced during computerscience class 2018 Klosterschule.
 
 ## Getting Started
 ```sh
-$ mkdir solar
-cd solar
-git clone https://github.com/simonh9134/solarsystem.git
+$ git clone https://github.com/simonh9134/solarsystem.git
 ```
 
 ## Built With
@@ -14,4 +12,4 @@ git clone https://github.com/simonh9134/solarsystem.git
 * [Processing](https://processing.org/)
 
 ## Acknowledgments
-Klosterschule Hamburg
+[Klosterschule Hamburg](http://www.klosterschule-hamburg.de/)
