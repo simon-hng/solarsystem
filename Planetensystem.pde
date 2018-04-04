@@ -1,24 +1,24 @@
 class Himmelskoerper {
-  PShape planet;
-  
   color farbe;
   float geschwindigkeit;
   float strecke;
   float durchmesser;
-  float masse;
-  
-  float zentralMasse;
+ 
   float zentralXPos;
   float zentralYPos;
   float zentralRadius;
   float xPos;
   float yPos;
-  
-    //Konstruktor Fuer Himmelskoerper um Sonne
-    Himmelskoerper(){
-      zentralXPos = 250;
-      zentralYPos = 250;
-    }
+ 
+  Himmelskoerper(float d, float g , float zR ){
+    farbe = #FFFFFF;
+    zentralXPos = 250;
+    zentralYPos = 250;
+
+    durchmesser = d;
+    geschwindigkeit = g;
+    zentralRadius = zR;
+  }
   
   void zeichnen(){
     fill(farbe);

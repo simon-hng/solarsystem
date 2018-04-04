@@ -1,32 +1,13 @@
-int Fenster = 1000;
 float zeit;
-Himmelskoerper Sonne = new Himmelskoerper();
-Himmelskoerper Erde = new Himmelskoerper();
-Himmelskoerper Mond = new Himmelskoerper();
-Himmelskoerper Mars = new Himmelskoerper();
+Himmelskoerper Sonne = new Himmelskoerper(50,0,0);//Durchmesser, Geschwindigkeit, Zentralradius
+Himmelskoerper Erde = new Himmelskoerper(20,11,100);
+Himmelskoerper Mond = new Himmelskoerper(10,15,25);
+Himmelskoerper Mars = new Himmelskoerper(20,15,50);
 
 void setup() { 
   background(0);
-  size(Fenster/2, Fenster/2);
+  size(500, 500);
   frameRate(100);
-  
-  Sonne.farbe = #FFFF00;
-  Sonne.durchmesser = 50;
-  
-  Mars.farbe = #ff0000;
-  Mars.durchmesser = 20;
-  Mars.geschwindigkeit = 11;
-  Mars.zentralRadius = 50;
-  
-  Erde.farbe = #0000FF;
-  Erde.durchmesser = 25;
-  Erde.geschwindigkeit = 10;
-  Erde.zentralRadius = 100;
-  
-  Mond.farbe = #555555;
-  Mond.durchmesser = 15;
-  Mond.geschwindigkeit = 15;
-  Mond.zentralRadius = 25;
 }
 
 void draw() {
