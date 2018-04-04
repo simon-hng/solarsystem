@@ -26,7 +26,7 @@ class Himmelskoerper {
   }
   
   void bewegung(){
-    strecke = geschwindigkeit * time; 
+    strecke = geschwindigkeit * zeit; 
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
     fill(farbe);

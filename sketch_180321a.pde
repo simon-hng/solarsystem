@@ -1,3 +1,4 @@
+int Fenster = 1000;
 float zeit;
 Himmelskoerper Sonne = new Himmelskoerper();
 Himmelskoerper Erde = new Himmelskoerper();
@@ -6,7 +7,7 @@ Himmelskoerper Mars = new Himmelskoerper();
 
 void setup() { 
   background(0);
-  size(500, 500);
+  size(Fenster/2, Fenster/2);
   frameRate(100);
   
   Sonne.farbe = #FFFF00;
@@ -23,7 +24,7 @@ void setup() {
   Erde.zentralRadius = 100;
   
   Mond.farbe = #555555;
-  Mond.durchmesser = 10;
+  Mond.durchmesser = 15;
   Mond.geschwindigkeit = 15;
   Mond.zentralRadius = 25;
 }
