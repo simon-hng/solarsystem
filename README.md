@@ -15,4 +15,4 @@ $ mkdir planetensystem
 * [Atom](https://atom.io/)
 
 ## Acknowledgments
-[Klosterschule Hamburg](http://www.klosterschule-hamburg.de
+[Klosterschule Hamburg](http://www.klosterschule-hamburg.de)
