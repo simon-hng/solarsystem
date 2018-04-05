@@ -13,12 +13,12 @@ void setup() {
 void draw() {
   background(0);
   zeit = zeit + 0.001;
-  
+
   Sonne.zeichnen();
-  
+
   Mars.bewegung();
-  
-  Erde.bewegung(); 
+
+  Erde.bewegung();
     Mond.zentralXPos = Erde.xPos;
     Mond.zentralYPos = Erde.yPos;
     Mond.bewegung();
