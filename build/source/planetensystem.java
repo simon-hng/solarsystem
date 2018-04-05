@@ -20,7 +20,7 @@ Himmelskoerper Erde = new Himmelskoerper(20,11,100);
 Himmelskoerper Mond = new Himmelskoerper(10,15,25);
 Himmelskoerper Mars = new Himmelskoerper(20,15,50);
 
-public void setup() { 
+public void setup() {
   background(0);
   
   frameRate(100);
@@ -30,14 +30,18 @@ public void draw() {
   background(0);
   zeit = zeit + 0.001f;
 
+  Sonne.bewegung();
   Sonne.zeichnen();
 
   Mars.bewegung();
+  Mars.zeichnen();
 
   Erde.bewegung();
+  Erde.zeichnen();
     Mond.zentralXPos = Erde.xPos;
     Mond.zentralYPos = Erde.yPos;
     Mond.bewegung();
+    Mond.zeichnen();
 }
 class Himmelskoerper {
   int farbe;
@@ -63,15 +67,13 @@ class Himmelskoerper {
 
   public void zeichnen(){
     fill(farbe);
-    ellipse(zentralXPos, zentralYPos, durchmesser, durchmesser);
+    ellipse(xPos, yPos, durchmesser, durchmesser);
   }
 
   public void bewegung(){
     strecke = geschwindigkeit * zeit;
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
-    fill(farbe);
-    ellipse(xPos, yPos, durchmesser, durchmesser);
   }
 }
   public void settings() {  size(500, 500); }

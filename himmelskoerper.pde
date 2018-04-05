@@ -22,14 +22,12 @@ class Himmelskoerper {
 
   void zeichnen(){
     fill(farbe);
-    ellipse(zentralXPos, zentralYPos, durchmesser, durchmesser);
+    ellipse(xPos, yPos, durchmesser, durchmesser);
   }
 
   void bewegung(){
     strecke = geschwindigkeit * zeit;
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
-    fill(farbe);
-    ellipse(xPos, yPos, durchmesser, durchmesser);
   }
 }
