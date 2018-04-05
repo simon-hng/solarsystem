@@ -6,7 +6,7 @@ Model for solarsystem produced during computerscience class 2018 Klosterschule.
 ```sh
 $ mkdir planetensystem
   cd planetensystem
-$ git clone https://github.com/simonh9134/solarsystem.git
+  git clone https://github.com/simonh9134/solarsystem.git
 ```
 
 ## Built With
