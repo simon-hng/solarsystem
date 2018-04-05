@@ -14,11 +14,11 @@ import java.io.IOException;
 
 public class planetensystem extends PApplet {
 
-float zeit;
-Himmelskoerper Sonne = new Himmelskoerper(50,0,0);//Durchmesser, Geschwindigkeit, Zentralradius
-Himmelskoerper Erde = new Himmelskoerper(20,11,100);
-Himmelskoerper Mond = new Himmelskoerper(10,15,25);
-Himmelskoerper Mars = new Himmelskoerper(20,15,50);
+float time;
+planet Sonne = new planet(50,0,0);//Durchmesser, speed, Zentralradius
+planet Erde = new planet(20,11,100);
+planet Mond = new planet(10,15,25);
+planet Mars = new planet(20,15,50);
 
 public void setup() {
   background(0);
@@ -28,24 +28,24 @@ public void setup() {
 
 public void draw() {
   background(0);
-  zeit = zeit + 0.001f;
+  time = time + 0.001f;
 
   Sonne.bewegung();
-  Sonne.zeichnen();
+  Sonne.render();
 
   Mars.bewegung();
-  Mars.zeichnen();
+  Mars.render();
 
   Erde.bewegung();
-  Erde.zeichnen();
+  Erde.render();
     Mond.zentralXPos = Erde.xPos;
     Mond.zentralYPos = Erde.yPos;
     Mond.bewegung();
-    Mond.zeichnen();
+    Mond.render();
 }
-class Himmelskoerper {
+class planet {
   int farbe;
-  float geschwindigkeit;
+  float speed;
   float strecke;
   float durchmesser;
 
@@ -55,23 +55,23 @@ class Himmelskoerper {
   float xPos;
   float yPos;
 
-  Himmelskoerper(float d, float g , float zR ){
+  planet(float d, float g , float zR ){
     farbe = 0xffFFFFFF;
     zentralXPos = 250;
     zentralYPos = 250;
 
     durchmesser = d;
-    geschwindigkeit = g;
+    speed = g;
     zentralRadius = zR;
   }
 
-  public void zeichnen(){
-    fill(farbe);
+  public void render(){
     ellipse(xPos, yPos, durchmesser, durchmesser);
+    fill(farbe);
   }
 
   public void bewegung(){
-    strecke = geschwindigkeit * zeit;
+    strecke = speed * time;
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
   }

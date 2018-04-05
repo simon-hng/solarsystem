@@ -1,6 +1,6 @@
-class Himmelskoerper {
+class planet {
   color farbe;
-  float geschwindigkeit;
+  float speed;
   float strecke;
   float durchmesser;
 
@@ -10,23 +10,23 @@ class Himmelskoerper {
   float xPos;
   float yPos;
 
-  Himmelskoerper(float d, float g , float zR ){
+  planet(float d, float g , float zR ){
     farbe = #FFFFFF;
     zentralXPos = 250;
     zentralYPos = 250;
 
     durchmesser = d;
-    geschwindigkeit = g;
+    speed = g;
     zentralRadius = zR;
   }
 
-  void zeichnen(){
-    fill(farbe);
+  void render(){
     ellipse(xPos, yPos, durchmesser, durchmesser);
+    fill(farbe);
   }
 
   void bewegung(){
-    strecke = geschwindigkeit * zeit;
+    strecke = speed * time;
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
   }

@@ -1,8 +1,8 @@
-float zeit;
-Himmelskoerper Sonne = new Himmelskoerper(50,0,0);//Durchmesser, Geschwindigkeit, Zentralradius
-Himmelskoerper Erde = new Himmelskoerper(20,11,100);
-Himmelskoerper Mond = new Himmelskoerper(10,15,25);
-Himmelskoerper Mars = new Himmelskoerper(20,15,50);
+float time;
+planet Sonne = new planet(50,0,0);//Durchmesser, speed, Zentralradius
+planet Erde = new planet(20,11,100);
+planet Mond = new planet(10,15,25);
+planet Mars = new planet(20,15,50);
 
 void setup() {
   background(0);
@@ -12,18 +12,18 @@ void setup() {
 
 void draw() {
   background(0);
-  zeit = zeit + 0.001;
+  time = time + 0.001;
 
   Sonne.bewegung();
-  Sonne.zeichnen();
+  Sonne.render();
 
   Mars.bewegung();
-  Mars.zeichnen();
+  Mars.render();
 
   Erde.bewegung();
-  Erde.zeichnen();
+  Erde.render();
     Mond.zentralXPos = Erde.xPos;
     Mond.zentralYPos = Erde.yPos;
     Mond.bewegung();
-    Mond.zeichnen();
+    Mond.render();
 }
