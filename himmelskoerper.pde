@@ -1,19 +1,29 @@
-class planet {
+class orb {
   color farbe;
   float speed;
   float strecke;
   float durchmesser;
 
+  orb zentralKoerper;
   float zentralXPos;
   float zentralYPos;
   float zentralRadius;
   float xPos;
   float yPos;
 
-  planet(float d, float g , float zR ){
+
+  //sonnen
+  orb(float x, float y, float d){
     farbe = #FFFFFF;
-    zentralXPos = 250;
-    zentralYPos = 250;
+    xPos = x;
+    yPos = y;
+    durchmesser = d;
+  }
+
+  //Planeten, Monde
+  orb(orb zK, float zR, float d, float g){
+    farbe = #FFFFFF;
+    zentralKoerper = zK;
 
     durchmesser = d;
     speed = g;
@@ -27,6 +37,9 @@ class planet {
 
   void bewegung(){
     strecke = speed * time;
+    zentralXPos = zentralKoerper.xPos;
+    zentralYPos = zentralKoerper.yPos;
+    
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
   }
