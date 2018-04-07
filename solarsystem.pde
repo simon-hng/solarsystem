@@ -15,9 +15,9 @@ void draw() {
 
   Sonne.render();
 
-  Erde.bewegung();
+  Erde.move();
   Erde.render();
 
-  Mond.bewegung();
+  Mond.move();
   Mond.render();
 }

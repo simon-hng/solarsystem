@@ -35,11 +35,11 @@ class orb {
     fill(farbe);
   }
 
-  void bewegung(){
+  void move(){
     strecke = speed * time;
     zentralXPos = zentralKoerper.xPos;
     zentralYPos = zentralKoerper.yPos;
-    
+
     xPos = zentralXPos + zentralRadius * cos(strecke);
     yPos = zentralYPos + zentralRadius * sin(strecke);
   }
