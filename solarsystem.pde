@@ -1,7 +1,7 @@
 float time;
 orb Sonne = new orb(250,250,50);//xPos, yPos, Durchmesser
-orb Erde = new orb(Sonne, 100, 20,11);//zentralKoerper, zentralRadius,durchmesser, geschwindigkeit
-orb Mond = new orb(Erde, 25, 10,15);
+orb Erde = new orb(Sonne, 100, 20,1.1);//zentralKoerper, zentralRadius,durchmesser, geschwindigkeit
+orb Mond = new orb(Erde, 25, 10,1.5);
 
 void setup() {
   background(0);
@@ -11,7 +11,6 @@ void setup() {
 
 void draw() {
   background(0);
-  time = time + 0.001;
 
   Sonne.render();
 

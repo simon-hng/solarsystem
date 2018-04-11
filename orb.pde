@@ -36,7 +36,7 @@ class orb {
   }
 
   void move(){
-    strecke = speed * time;
+    strecke = speed * 0.001*millis();
     zentralXPos = zentralKoerper.xPos;
     zentralYPos = zentralKoerper.yPos;
 
