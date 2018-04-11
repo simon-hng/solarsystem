@@ -31,16 +31,20 @@ class orb {
   }
 
   void render(){
-    ellipse(xPos, yPos, durchmesser, durchmesser);
     fill(farbe);
+    translate(xPos, yPos);
+    sphere(durchmesser);
   }
 
   void move(){
-    strecke = speed * time;
     zentralXPos = zentralKoerper.xPos;
     zentralYPos = zentralKoerper.yPos;
 
-    xPos = zentralXPos + zentralRadius * cos(strecke);
-    yPos = zentralYPos + zentralRadius * sin(strecke);
+    pushMatrix();
+      rotate(millis() * speed * TWO_PI);
+      translate(zentralRadius,0);
+      fill(farbe);
+      sphere(durchmesser); 
+    popMatrix();
   }
 }
