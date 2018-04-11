@@ -1,11 +1,10 @@
 float time;
-orb Sonne = new orb(250,250,50);//xPos, yPos, Durchmesser
-orb Erde = new orb(Sonne, 100, 20, 0.0011);//zentralKoerper, zentralRadius,durchmesser, geschwindigkeit
-orb Mond = new orb(Erde, 150, 10, 0.0015);
+orb Sonne = new orb(450,450,50);//xPos, yPos, Durchmesser
+orb Erde = new orb(Sonne, 200, 20, 0.1);//zentralKoerper, zentralRadius,durchmesser, geschwindigkeit
 
 void setup() {
   background(0);
-  size(500, 500, P3D);
+  size(900, 900, P3D);
   smooth();
   frameRate(100);
 }
@@ -17,6 +16,5 @@ void draw() {
 
   Sonne.render();
 
-  Mond.move();
-
+  Erde.move();
 }

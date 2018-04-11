@@ -32,19 +32,23 @@ class orb {
 
   void render(){
     fill(farbe);
-    translate(xPos, yPos);
-    sphere(durchmesser);
+    pushMatrix();
+      translate(xPos, yPos);
+      sphere(durchmesser);
+    popMatrix();
   }
 
   void move(){
     zentralXPos = zentralKoerper.xPos;
     zentralYPos = zentralKoerper.yPos;
 
+    fill(farbe);
+    lights();
+    translate(zentralXPos, zentralYPos);
     pushMatrix();
-      rotate(millis() * speed * TWO_PI);
-      translate(zentralRadius,0);
-      fill(farbe);
-      sphere(durchmesser); 
+      rotate(millis()*radians(speed));
+      translate(zentralRadius, 0);
+      sphere(durchmesser);
     popMatrix();
   }
 }
