@@ -1,4 +1,5 @@
 orb orbs[]  = new orb[50];
+int orbCount = 10;
 float scale = 5;
 
 void setup() {
@@ -26,25 +27,11 @@ void draw() {
   orbs[0].render();
   orbs[0].render(mouseX, mouseY);
 
-//Writing in function returns nullpointer exception. Fix required
-  orbs[1].move();
-  orbs[1].render();
-  orbs[2].move();
-  orbs[2].render();
-  orbs[3].move();
-  orbs[3].render();
-  orbs[4].move();
-  orbs[4].render();
-  orbs[5].move();
-  orbs[5].render();
-  orbs[6].move();
-  orbs[6].render();
-  orbs[7].move();
-  orbs[7].render();
-  orbs[8].move();
-  orbs[8].render();
-  orbs[9].move();
-  orbs[9].render();
+  
+  for(int index = 1; index < orbCount; index++){
+    orbs[index].move();
+    orbs[index].render();
+  }
 }
 
 //Function for scaling
