@@ -1,6 +1,6 @@
 # Solarsystem
 
-Model for solarsystem produced during computerscience class 2018 Klosterschule.
+Model for solarsystem produced during computerscience class 2018 [Klosterschule Hamburg](http://www.klosterschule-hamburg.de).
 
 ![Thumbnail](./solarsystem.jpg)
 
@@ -16,9 +16,8 @@ $ cd solarsystem
 ## Built With
 
 * [Processing](https://processing.org/)
-* [Atom](https://atom.io/)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
-## Acknowledgments
-* [Klosterschule Hamburg](http://www.klosterschule-hamburg.de)
-* **Miguel Xavier** - *Mini Migel*
+## Author
+
+**Simon Huang** - *Initial work* - [simonh9134](https://github.com/PurpleBooth/https://github.com/simonh9134)
