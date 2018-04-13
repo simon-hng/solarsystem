@@ -12,7 +12,7 @@ class orb {
   float xPos;
   float yPos;
 
-  //sonnen
+  //Constructor for sun
   orb(float x, float y, float d, int r, int g, int b){
     xPos = scale*x;
     yPos = scale*y;
@@ -23,7 +23,7 @@ class orb {
     farbe[2] = b;
   }
 
-  //Planeten, Monde
+  //Constructor for Planets, Moons
   orb(orb zK, float zR, float d, float v, int r, int g, int b){
     zentralKoerper = zK;
     zentralRadius = zR;
@@ -36,13 +36,14 @@ class orb {
     farbe[2] = b;
   }
 
+  void mousePos(int x, int y){
+    xPos = x;
+    yPos = y;
+  }
+
   void render(){
     fill(farbe[0], farbe[1], farbe[2]);
     ellipse(xPos, yPos, durchmesser*scale, durchmesser*scale);
-  }
-  void render(int x, int y){
-    xPos = x;
-    yPos = y;
   }
 
   void move(){

@@ -25,7 +25,7 @@ void draw() {
   background(0);
 
   orbs[0].render();
-  orbs[0].render(mouseX, mouseY);
+  orbs[0].mousePos(mouseX, mouseY);
 
   
   for(int index = 1; index < orbCount; index++){
