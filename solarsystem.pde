@@ -1,5 +1,5 @@
 orb orbs[]  = new orb[50];
-int orbCount = 8;
+int orbCount = 10;
 float scale = 5;
 
 void setup() {

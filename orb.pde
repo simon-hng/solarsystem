@@ -14,7 +14,7 @@ class orb {
 
   //Constructor for sun
   orb(int d, int r, int g, int b){
-    zentralRadius = 1;
+    zentralRadius = 0;
     durchmesser = d;
 
     farbe[0] = r;
@@ -39,11 +39,14 @@ class orb {
       translate(450, 450, 0);
       noStroke();
       lights();
-
+      lightSpecular(0, 0, 0);
+      lightFalloff(5, 0, 0);
+      ambientLight(50, 50, 50);
       fill(farbe[0], farbe[1], farbe[2]);
       pushMatrix();
         rotate(millis()*radians(0.1*speed));
         translate(scale*zentralRadius, 0, 0);
+        directionalLight(200, 200, 200, zentralRadius, 0, 0);
         sphere(scale*durchmesser);
       popMatrix();
     popMatrix();
