@@ -1,5 +1,6 @@
-class orb {  	
-  int farbe[] = new int[3];
+class orb {
+
+  PImage planet;
   float speed;
   float strecke;
   float durchmesser;
@@ -13,27 +14,24 @@ class orb {
   float yPos;
 
   //Constructor for sun
-  orb(float x, float y, float d, int r, int g, int b){
+  orb(float x, float y, float d, String i){
     xPos = scale*x;
     yPos = scale*y;
     durchmesser = d;
 
-    farbe[0] = r;
-    farbe[1] = g;
-    farbe[2] = b;
+    planet = loadImage("textures/"+i);
   }
 
   //Constructor for Planets, Moons
-  orb(orb zK, float zR, float d, float v, int r, int g, int b){
+  orb(orb zK, float zR, float d, float v, String i){
     zentralKoerper = zK;
     zentralRadius = zR;
 
     durchmesser = d;
     speed = v;
 
-    farbe[0] = r;
-    farbe[1] = g;
-    farbe[2] = b;
+    planet = loadImage("textures/"+i);
+    println("textures/"+i);
   }
 
   void mousePos(int x, int y){
@@ -42,8 +40,8 @@ class orb {
   }
 
   void render(){
-    fill(farbe[0], farbe[1], farbe[2]);
-    ellipse(xPos, yPos, durchmesser*scale, durchmesser*scale);
+    image(planet, xPos-(durchmesser*scale)/2, yPos-(durchmesser*scale)/2, durchmesser*scale, durchmesser*scale);
+    /* ellipse(xPos, yPos, durchmesser*scale, durchmesser*scale); */
   }
 
   void move(){
