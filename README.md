@@ -5,6 +5,7 @@ Model for solarsystem produced during computerscience class 2018 [Klosterschule 
 ![Thumbnail](./solarsystem.jpg)
 
 ## Getting Started
+
 ```sh
 $ git clone https://github.com/simonh9134/solarsystem.git
 
@@ -13,6 +14,7 @@ $ git clone https://github.com/simonh9134/solarsystem.git
 $ cd solarsystem
   processing solarsystem.pde
 ```
+
 ## Built With
 
 * [Processing](https://processing.org/)
