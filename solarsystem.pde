@@ -1,11 +1,12 @@
-orb orbs[]  = new orb[50];
+int starCount = 1000;
 int orbCount = 10;
+star stars[] = new star[starCount];
+orb orbs[]  = new orb[orbCount];
 float scale = 5;
 
 void setup() {
   background(0);
   size(900, 900);
-  surface.setResizable(true);
   frameRate(100);
 
   orbs[0] = new orb (450, 450, 20, 255, 200, 0);              //xPos, yPos, Durchmesser, R,G,B
@@ -18,11 +19,19 @@ void setup() {
   orbs[7] = new orb (orbs[0], 714, 120, 0.2, 250, 200, 10);   //Saturn
   orbs[8] = new orb (orbs[0], 1435, 51, 0.14, 50, 75, 200);   //Uranus
   orbs[9] = new orb (orbs[0], 2249, 50, 0.1, 25, 80, 175);    //Neptun
+
+  for(int index = 0; index < starCount; index++){
+    stars[index] = new star(random(900), random(900), int(random(1,4)));
+  }
 }
 
 void draw() {
   noCursor();
   background(0);
+
+  for(int index = 0; index < starCount; index++){
+    stars[index].render();
+  }
 
   orbs[0].render();
   orbs[0].mousePos(mouseX, mouseY);
@@ -33,7 +42,6 @@ void draw() {
     orbs[index].render();
   }
 }
-
 //Function for scaling
 void mouseWheel(MouseEvent event) {
   float e = event.getCount();
