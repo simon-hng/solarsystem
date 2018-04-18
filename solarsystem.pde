@@ -9,11 +9,11 @@ void setup() {
   size(900, 900);
   frameRate(100);
 
-  orbs[0] = new orb (450, 450, 20, "sun.png");              //xPos, yPos, Durchmesser, R,G,B
-  orbs[1] = new orb (orbs[0], 29, 5, 0.96, "mercury.png");     //Mercury: zentralKoerper, zentralRadius,durchmesser, geschwindigkeit, R,G,B
+  orbs[0] = new orb (450, 450, 20, 10, "sun.png");              //xPos, yPos, Durchmesser, mass, texture
+  orbs[1] = new orb (orbs[0], 29, 5, 1, "mercury.png");     //Mercury: zentralKoerper, zentralRadius,durchmesser, mass, texture
   orbs[2] = new orb (orbs[0], 54, 12, 0.7, "venus.png");    //Venus
   orbs[3] = new orb (orbs[0], 75, 13, 0.6, "earth.png");    //Earth
-  orbs[4] = new orb (orbs[3], 10, 2, 0.07, "moon.png");    //Moon
+  orbs[4] = new orb (orbs[3], 10, 1, 0.07, "moon.png");    //Moon
   orbs[5] = new orb (orbs[0], 114, 7, 0.48, "mars.png");     //Mars
   orbs[6] = new orb (orbs[0], 389, 144, 0.26, "jupiter.png");   //Jupiter
   orbs[7] = new orb (orbs[0], 714, 120, 0.2, "saturn.png");   //Saturn
