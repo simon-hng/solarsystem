@@ -3,6 +3,7 @@ int orbCount = 10;
 star stars[] = new star[starCount];
 orb orbs[]  = new orb[orbCount];
 float scale = 5;
+int timeScale = 10;
 
 void setup() {
   background(0);
@@ -50,4 +51,15 @@ void mouseWheel(MouseEvent event) {
   } else {
     scale = scale + 0.1;
   }
+}
+
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == 38) {
+      timeScale = timeScale + 5;
+    } else if (keyCode == 40) {
+      timeScale = timeScale - 5;
+    } 
+  }
+  println(timeScale);
 }

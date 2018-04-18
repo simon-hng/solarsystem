@@ -54,7 +54,7 @@ class orb {
 
     timeForOrbit =  sqrt((pow(2*PI, 2) * pow(zentralRadius, 3))/gravConst*zentralMass);
 
-    strecke = (pow(10, 9)/timeForOrbit) * 0.001*millis();
+    strecke = (pow(timeScale, 9)/timeForOrbit) * 0.001*millis();
     xPos = zentralXPos + (scale*zentralRadius) * cos(strecke);
     yPos = zentralYPos + (scale*zentralRadius) * sin(strecke);
   }
