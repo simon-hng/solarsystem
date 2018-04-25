@@ -6,10 +6,6 @@ class star {
 	float yPos;
 
 	star(float x, float y, int d){
-		farbe[0] = 255;
-		farbe[1] = 255;
-		farbe[2] = 255;
-
 		xPos = x;
 		yPos = y;
 
@@ -17,7 +13,7 @@ class star {
 	}
 
 	void render(){
-		fill(farbe[0], farbe[1], farbe[2]);
+		fill(255,255,255);
 		ellipse(xPos, yPos, durchmesser, durchmesser);
 	}
 }
