@@ -1,29 +1,37 @@
+PVector location, magnitude;
+
 class orb {
   float gravConst = 6.674*pow(10, -11);
 
-  PImage planet;
-  float strecke;
+  PImage image;
+  float force;
+  float accel;
+  float velos;
+
   float durchmesser;
   float timeForOrbit;
   float mass;
 
   orb zentralKoerper;
-  float zentralXPos;
-  float zentralYPos;
+  float startXPos;
+  float startYPos;
+
   float zentralRadius;
   float zentralMass;
   
+  float xCenter;
+  float yCenter;
   float xPos;
   float yPos;
 
   //Constructor for sun
   orb(float x, float y, float d, float m, String i){
-    xPos = scale*x;
-    yPos = scale*y;
+    xPos = x;
+    yPos = y;
     durchmesser = d;
     mass = m;
 
-    planet = loadImage("textures/"+i);
+    image = loadImage("textures/"+i);
   }
 
   //Constructor for Planets, Moons
@@ -33,29 +41,34 @@ class orb {
 
     durchmesser = d;
     mass = m;
-    planet = loadImage("textures/"+i);
-    println("textures/"+i);
-  }
-
-  void mousePos(int x, int y){
-    xPos = x;
-    yPos = y;
+    image = loadImage("textures/"+i);
   }
 
   void render(){
-    image(planet, xPos-(durchmesser*scale)/2, yPos-(durchmesser*scale)/2, durchmesser*scale, durchmesser*scale);
-    /* ellipse(xPos, yPos, durchmesser*scale, durchmesser*scale); */
+    image(image, xPos-(durchmesser)/2, yPos-(durchmesser)/2, durchmesser, durchmesser);
   }
 
-  void move(){
-    zentralXPos = zentralKoerper.xPos;
-    zentralYPos = zentralKoerper.yPos;
+  void init(){
+    xPos = zentralKoerper.xPos+zentralRadius-durchmesser/2;
+    yPos = zentralKoerper.yPos;
+  }
+
+  void force(){
     zentralMass = zentralKoerper.mass;
 
-    timeForOrbit =  sqrt((pow(2*PI, 2) * pow(zentralRadius, 3))/gravConst*zentralMass);
+    location = new PVector(xPos-zentralKoerper.xPos, yPos-zentralKoerper.yPos);
 
-    strecke = (pow(timeScale, 9)/timeForOrbit) * 0.001*millis();
-    xPos = zentralXPos + (scale*zentralRadius) * cos(strecke);
-    yPos = zentralYPos + (scale*zentralRadius) * sin(strecke);
+    force = 0.005*(mass*zentralMass)/sq(location.mag());
+    println(force);
+    accel = force/mass;
+    velos = accel*millis();
+
+
+    magnitude = new PVector(xPos-zentralKoerper.xPos, yPos-zentralKoerper.yPos);
+    magnitude.setMag(velos*millis());
+    magnitude.normalize();
+
+    xPos = xPos-magnitude.x;
+    yPos = yPos-magnitude.y;
   }
 }
